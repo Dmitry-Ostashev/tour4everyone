@@ -1,10 +1,13 @@
-import Topic from "./topic";
+import { Topic } from "./topic";
 import fs from 'fs';
+import { promisify } from "util";
 
 const TOPICS_DATA_FILE_NAME = '../../data/topics.json';
 
-export default function fetchTopics () : Topic {
-    const topicsData = fs.readFileSync(TOPICS_DATA_FILE_NAME, 'utf8');
+const readFile = promisify(fs.readFile);
+
+export default async function fetchTopics (fileName = TOPICS_DATA_FILE_NAME) : Promise<Topic> {
+    const topicsData = await readFile(TOPICS_DATA_FILE_NAME, 'utf8');
 
     const allTopics: Topic = JSON.parse(topicsData);
 

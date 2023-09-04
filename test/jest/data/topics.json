@@ -1,0 +1,17 @@
+{
+    "id": "index",
+    "items": [
+        {
+            "id": "first-child",
+            "items": [
+                { "id": "sub-child" }
+            ]
+        },
+        {
+            "id": "second-child"
+        },
+        {
+            "id": "third-child"
+        }
+    ]
+}

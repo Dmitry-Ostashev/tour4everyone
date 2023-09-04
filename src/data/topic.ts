@@ -1,9 +1,14 @@
-export default class Topic {
-    private _childTopics: Topic[] = [];
-    private _id: string = '';
-    private _title: string = '';
+// export default class Topic {
+//     private _items: Topic[] = [];
+//     private _id: string = '';
+//     private _title: string = '';
 
-    constructor() {
+//     constructor() {
         
-    }
+//     }
+// }
+
+export type Topic = {
+    id: string;
+    items: Topic[]
 }
